@@ -1,19 +1,24 @@
-****inputGen.R:
-
-1. create a folder inputConfig
-2. run inputGen.R to generate inputConfig_** files, which will appear under the folder inputConfig. Here, ** is a number that indexes one parameter configuration.
+There are two folders. One is for single bandwidth and the other for multiple. For each algorithm, it involves two steps.
 
 
-****nonsym_cluster_para_qc_test_incom_jk.R
 
-1. Create a folder tmpFiles/, where the generated output will be stored
+-------------------------
+1. Single_bandwidth
 
-2. Take as input the inputConfig/inputConfig_** files generated before
+Step 1: specify data and parameters in the GENERATE_input_single.R file, and run the file to generate the input file "INPUT_TO_SILS_Single.RData"
 
-3. Line 77 describes how the error is generated (currently it is a mixture of normals). Change Line 77 to the desired noise distribution.
+Step 2: run the RUN_SILS_single.R file, and make sure "INPUT_TO_SILS_Single.RData" has been generated in Step 1. The output is the p-value of the test.
+
+------------------------
+2. Multiple_bandwidths
+
+Step 1: specify data and parameters in the GENERATE_input_multiple.R file, and run the file to generate the input file "INPUT_TO_SILS_Multiple.RData"
+
+Step 2: run the RUN_SILS_multiple.R file, and make sure "INPUT_TO_SILS_Multiple.RData" has been generated in Step 1. The output is the p-value of the test.
+
+---------------
+Note that for d=2,n=1000,b_n=0.5, it takes around 5 mins with 40 computing cores. 
+
+Of course, the smaller the p-value, the stronger evidence against the null (H_0: the regression function is concave)
 
 
-****Note:
-1. The bernoulliSampling.R and util_funs.R are used in the file "nonsym_cluster_para_qc_test_incom_jk.R"
-
-2. We will clean the code later to make it more user friendly. 

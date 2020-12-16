@@ -217,4 +217,9 @@ generate_Query = function(l, u, p, d){
   return(queryPoints)
 }
 
-
+my_rbinom = function(ntrial, np){
+  tmp_d = 3000
+  tmp_q = ntrial %/% tmp_d
+  tmp_r = ntrial %% tmp_d
+  return(sum(rbinom(tmp_d, tmp_q, np)) + rbinom(1,tmp_r,np))
+}
