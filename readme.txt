@@ -21,4 +21,13 @@ Note that for d=2,n=1000,b_n=0.5, it takes around 5 mins with 40 computing cores
 
 Of course, the smaller the p-value, the stronger evidence against the null (H_0: the regression function is concave)
 
+@misc{song2020stratified,
+      title={Stratified incomplete local simplex tests for curvature of nonparametric multiple regression}, 
+      author={Yanglei Song and Xiaohui Chen and Kengo Kato},
+      year={2020},
+      eprint={2003.09091},
+      archivePrefix={arXiv},
+      primaryClass={math.ST}
+}
+
 
